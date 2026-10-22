@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block title %}
+    <title>Local Library</title>
+    {% endblock %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-layout">
+      <aside class="site-sidebar">
+        <a class="brand" href="{% url 'index' %}">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <span>Local Library</span>
+        </a>
+        {% block sidebar %}
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'index' %}" aria-current="page">Home</a></li>
+          <li><a href="{% url 'books' %}">Books</a></li>
+          {% comment %}
+          <li><a href="{% url 'authors' %}">Authors</a></li>
+          {% endcomment %}
+        </ul>
+        {% endblock %}
+      </aside>
+      <main class="page-content">{% block content %}{% endblock %}</main>
+    </div>
+  </body>
+</html>

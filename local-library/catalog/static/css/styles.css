@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f8f5;
+  color: #26372f;
+  font:
+    16px/1.5 Arial,
+    sans-serif;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+.site-sidebar {
+  padding: 2rem 1.25rem;
+  background: #edf1eb;
+  border-right: 1px solid #dfe6dc;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+.brand-mark {
+  display: grid;
+  width: 2.25rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 0.6rem;
+  background: #37604b;
+  color: white;
+  font:
+    1.3rem Georgia,
+    serif;
+}
+.sidebar-nav {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav a,
+.sidebar-nav li span {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.5rem;
+  color: #647368;
+  text-decoration: none;
+}
+.sidebar-nav a[aria-current="page"],
+.sidebar-nav a:hover {
+  background: #dce8dc;
+  color: #315a45;
+}
+.page-content {
+  width: min(100%, 1000px);
+  margin: auto;
+  padding: 3rem;
+}
+.welcome {
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background: #e8efe5;
+}
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: #59735d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.welcome h1,
+.collection h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+.welcome h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.welcome p:last-child {
+  margin-bottom: 0;
+  color: #647368;
+}
+.collection {
+  margin-top: 2.25rem;
+}
+.collection h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 1rem;
+}
+.stat-card {
+  padding: 1.25rem;
+  border: 1px solid #e2e7df;
+  border-radius: 0.75rem;
+  background: white;
+  cursor: pointer;
+}
+.stat-value {
+  margin: 0;
+  color: #37604b;
+  font:
+    700 2rem Georgia,
+    serif;
+}
+.stat-card h3 {
+  margin: 0.35rem 0 0;
+  color: #647368;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+  .site-sidebar {
+    padding: 1rem 1.25rem;
+    border-right: 0;
+    border-bottom: 1px solid #dfe6dc;
+  }
+  .brand {
+    margin-bottom: 0.75rem;
+  }
+  .sidebar-nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .page-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-content {
+    padding: 1rem;
+  }
+  .welcome {
+    padding: 1.5rem;
+  }
+}
