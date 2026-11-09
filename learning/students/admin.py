@@ -5,8 +5,9 @@ from .models import Student
 
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ["first_name", "last_name", "age", "grade"]
+    list_display = ["first_name", "last_name", "age", "grade", "address"]
     search_fields = ["first_name"]
+    list_filter = ["age", "address"]
 
 
 admin.site.register(Student, StudentAdmin)
